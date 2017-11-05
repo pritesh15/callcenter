@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CallCenterApplication {
 
     public static void main(String[] args){
+
         SpringApplication.run(CallCenterApplication.class,args);
     }
 

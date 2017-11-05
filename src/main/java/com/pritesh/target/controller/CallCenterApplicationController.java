@@ -4,9 +4,7 @@ import com.pritesh.target.model.Call;
 import com.pritesh.target.model.CallCenterResponse;
 import com.pritesh.target.model.CallSummary;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -16,9 +14,9 @@ import java.util.Map;
 @RestController
 public class CallCenterApplicationController {
 
-    @RequestMapping("/callcenter")
-    public CallSummary getCallSummary(@RequestParam (value = "callEntry") String callEntry){
-        String [] callValues = callEntry.split(",");
+    @RequestMapping(value = "/callcenter",method=RequestMethod.POST)
+    public CallSummary getCallSummary(@RequestBody Map.Entry<String,String> callEntry){
+        String [] callValues = callEntry.getValue().split(",");
         Call [] calls = new Call[callValues.length];
         for(int i=0;i<callValues.length;i++){
             calls[i] = new Call(callValues[i]);
@@ -26,4 +24,5 @@ public class CallCenterApplicationController {
         CallCenterResponse response = new CallCenterResponse(calls);
         return response.processCalls();
     }
+
 }

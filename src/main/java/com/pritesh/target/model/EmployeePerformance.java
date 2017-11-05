@@ -8,14 +8,14 @@ public class EmployeePerformance {
     private int timeTakenInMinutes;
     private int callsAttended;
     private int resolved;
-    private int unresolved;
+    private int unresolvedOrEscalated;
 
     public EmployeePerformance(String id, int timeTakenInMinutes, int callsAttended, int resolved, int unresolved) {
         this.id = id;
         this.timeTakenInMinutes = timeTakenInMinutes;
         this.callsAttended = callsAttended;
         this.resolved = resolved;
-        this.unresolved = unresolved;
+        this.unresolvedOrEscalated = unresolved;
     }
 
     public String getId() {
@@ -50,11 +50,11 @@ public class EmployeePerformance {
         this.resolved = resolved;
     }
 
-    public int getUnresolved() {
-        return unresolved;
+    public int getUnresolvedOrEscalated() {
+        return unresolvedOrEscalated;
     }
 
-    public void setUnresolved(int unresolved) {
-        this.unresolved = unresolved;
+    public void setUnresolvedOrEscalated(int unresolvedOrEscalated) {
+        this.unresolvedOrEscalated = unresolvedOrEscalated;
     }
 }
