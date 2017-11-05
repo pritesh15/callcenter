@@ -90,7 +90,8 @@ public class Employee implements Runnable{
                 synchronized (this.getQ1()) {
                     call = this.getQ1().poll();
                 }
-                CallProcessingAndEscalation.processCall(this,call);
+                CallProcessingAndEscalation callProcessingAndEscalation = new CallProcessingAndEscalation();
+                callProcessingAndEscalation.processCall(this,call);
             } else {
                 try {
                     Thread.sleep(5);

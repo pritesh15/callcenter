@@ -7,10 +7,10 @@ import com.pritesh.target.model.Call;
  */
 public class CallProcessingAndEscalation {
 
-    public static void processCall(Employee employee,Call call){
-        employee.setAttendedCalls(employee.getAttendedCalls()+1);
+    public void processCall(Employee employee,Call call){
         try {
             int duration = call.getDuration();
+            employee.setAttendedCalls(employee.getAttendedCalls()+1);
             Thread.sleep(employee.getDurationLimit());
             if(duration > employee.getDurationLimit()){
                 employee.setTotalTimeTaken(employee.getTotalTimeTaken()+employee.getDurationLimit());
@@ -24,7 +24,7 @@ public class CallProcessingAndEscalation {
             e.printStackTrace();
         }
     }
-    public static void escalateCall(Employee employee,Call call){
+    public void escalateCall(Employee employee,Call call){
         employee.setEscalatedCalls(employee.getEscalatedCalls()+1);
         synchronized (employee.getQ2()){
             employee.getQ2().add(call);
