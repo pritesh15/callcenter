@@ -14,7 +14,7 @@ public class Call {
         this.duration = duration;
     }
 
-    public Call(String duration){
-        this.duration = Integer.parseInt(duration);
+    public Call(int duration){
+        this.duration = duration;
     }
 }

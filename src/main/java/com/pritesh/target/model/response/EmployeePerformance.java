@@ -1,4 +1,4 @@
-package com.pritesh.target.model;
+package com.pritesh.target.model.response;
 
 /**
  * Created by pripatha on 11/5/2017.
@@ -8,14 +8,14 @@ public class EmployeePerformance {
     private int timeTakenInMinutes;
     private int callsAttended;
     private int resolved;
-    private int unresolvedOrEscalated;
+    private int escalated;
 
     public EmployeePerformance(String id, int timeTakenInMinutes, int callsAttended, int resolved, int unresolved) {
         this.id = id;
         this.timeTakenInMinutes = timeTakenInMinutes;
         this.callsAttended = callsAttended;
         this.resolved = resolved;
-        this.unresolvedOrEscalated = unresolved;
+        this.escalated = unresolved;
     }
 
     public String getId() {
@@ -50,11 +50,11 @@ public class EmployeePerformance {
         this.resolved = resolved;
     }
 
-    public int getUnresolvedOrEscalated() {
-        return unresolvedOrEscalated;
+    public int getEscalated() {
+        return escalated;
     }
 
-    public void setUnresolvedOrEscalated(int unresolvedOrEscalated) {
-        this.unresolvedOrEscalated = unresolvedOrEscalated;
+    public void setEscalated(int escalated) {
+        this.escalated = escalated;
     }
 }

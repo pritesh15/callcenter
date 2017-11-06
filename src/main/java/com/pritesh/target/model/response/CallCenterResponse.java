@@ -1,16 +1,16 @@
-package com.pritesh.target.model;
+package com.pritesh.target.model.response;
 
 /**
  * Created by pripatha on 11/5/2017.
  */
-public class CallSummary {
+public class CallCenterResponse {
     private int num_of_calls;
     private int resolved;
     private int unresolved;
     private int totalTimeTakenInMinutes;
     private Performance performance;
 
-    public CallSummary(int num_of_calls, int resolved, int unresolved, int totalTimeTakenInMinutes, Performance performance) {
+    public CallCenterResponse(int num_of_calls, int resolved, int unresolved, int totalTimeTakenInMinutes, Performance performance) {
         this.num_of_calls = num_of_calls;
         this.resolved = resolved;
         this.unresolved = unresolved;

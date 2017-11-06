@@ -11,15 +11,14 @@ public class CallProcessingAndEscalation {
         try {
             int duration = call.getDuration();
             employee.setAttendedCalls(employee.getAttendedCalls()+1);
-            Thread.sleep(employee.getDurationLimit());
+            Thread.sleep(duration);
             if(duration > employee.getDurationLimit()){
-                employee.setTotalTimeTaken(employee.getTotalTimeTaken()+employee.getDurationLimit());
                 escalateCall(employee,call);
             }
             else{
                 employee.setResolvedCalls(employee.getResolvedCalls()+1);
-                employee.setTotalTimeTaken(employee.getTotalTimeTaken()+call.getDuration());
             }
+            employee.setTotalTimeTaken(employee.getTotalTimeTaken()+duration);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
