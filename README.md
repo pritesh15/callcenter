@@ -15,6 +15,8 @@ Any calls which stays more than 10 minutes with a SE will be escalated to next l
 Any calls which stays more than 15 minutes with Manager will be treated as unresolved
 Any executive cannot not handle more than Z/X+Y calls. Once the limit is reached, he/she should not receive any further calls.
 
+Sample Request JSON :
+
  {
   "number_of_calls": "30",
   "je": [
